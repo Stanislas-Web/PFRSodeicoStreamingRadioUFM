@@ -1,31 +1,7 @@
-// import React from 'react';
-// import { StyleSheet,Text, View, SafeAreaView } from 'react-native';
-// import styled from 'styled-components/native';
-
-// export default function App() {
-//   return (
-//     <Container>
-//         <BackgroundStyle source={require("../assets/banniere.png")}/>
-//         <Text>Papa</Text>
-//         <SafeAreaView></SafeAreaView>
-//     </Container>
-//   );
-// }
-
-// const Container = styled.View`
-//     flex: 1;
-//     height: "300px";
-//     background-color: "blue";
-
-// `;
-
-// const BackgroundStyle = styled.ImageBackground`
-//     width: 100%;
-// `;
-
 import React from 'react';
 import {Image, View} from 'react-native';
 import styled from 'styled-components/native';
+// import MyCarousel from './Carousel';
 
 const Container = styled.View`
   flex: 1;
@@ -55,11 +31,13 @@ const ViewStyle = styled.View`
 export default () => (
     <Container>
         <BackgroundStyle source={require("../assets/banniere.png")}/>
-        <ViewParent>
-        <ViewStyle>
+        {/* <ViewParent> */}
+        {/* <ViewStyle> */}
 
-        </ViewStyle>
-        </ViewParent>
+        {/* </ViewStyle> */}
+        
+        {/* <MyCarousel/> */}
+        {/* </ViewParent> */}
     </Container>
 )
 

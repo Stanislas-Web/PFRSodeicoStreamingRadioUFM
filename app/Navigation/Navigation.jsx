@@ -17,27 +17,33 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+    <Tab.Navigator
+        tabBarOptions={{
+          activeTintColor: '#F3B900',
+          inactiveTintColor: 'gray',
+        }}
+      >
+
         <Tab.Screen
         name="Accueil" 
         component={Home}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <SimpleLineIcons name="home" size={23} color={color} />
+          tabBarIcon: ({  color }) => (
+            <SimpleLineIcons name="home" size={23}  color={color} />
             
           ),
         }} 
         tabBarOptions={{
           activeTintColor: 'red',
-          inactiveTintColor: 'gray',
+          inactiveTintColor: 'red',
         }}
         />
         <Tab.Screen 
         name="Favoris" 
         component={Favoris}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="favorite-border" size={24} color="#c4C4C4" />
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="favorite-border" size={24} color={color} />
           ),
         }} 
          />
@@ -45,8 +51,8 @@ export default function App() {
         name="Recherche" 
         component={Search}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Octicons name="search" size={24} color="#c4C4C4" />
+          tabBarIcon: ({ color}) => (
+            <Octicons name="search" size={24} color={color} />
           ),
         }} 
          />
@@ -54,13 +60,13 @@ export default function App() {
         name="Profile" 
         component={Profile}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome5 name="user" size={24} color="#c4C4C4" />
+          tabBarIcon: ({ color }) => (
+            <FontAwesome5 name="user" size={24} color={color} />
           ),
         }} 
          />
-         
       </Tab.Navigator>
+      
     </NavigationContainer>
   );
 }
