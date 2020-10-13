@@ -31,13 +31,13 @@ const ViewStyle = styled.View`
 export default () => (
     <Container>
         <BackgroundStyle source={require("../assets/banniere.png")}/>
-        {/* <ViewParent> */}
-        {/* <ViewStyle> */}
+        <ViewParent>
+        <ViewStyle>
 
-        {/* </ViewStyle> */}
+        </ViewStyle>
         
         {/* <MyCarousel/> */}
-        {/* </ViewParent> */}
+        </ViewParent>
     </Container>
 )
 
