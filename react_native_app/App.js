@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Home from './components/Home';
+import Home from './pages/Home';
 import Navigation from './Navigation/Navigation';
 import { createStackNavigator } from '@react-navigation/stack';
 
