@@ -27,17 +27,19 @@ const ImagePlayer = styled.Image`
     height: 60px;
 
 `;
- 
+
 export default () => (
-    <FlatList
-          data={this.state.films}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({item}) => <FilmItem film={item}/>}
-          onEndReachedThreshold={0.5}
-          onEndReached={() => {
-              if (this.page < this.totalPages) {
-                 this._loadFilms()
-              }
-          }}
+    
+    <ScrollView>
+        <FlatList
+            contentContainerStyle={{alignSelf: 'flex-start'}}
+            numColumns={listData.length / 2}
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            data={listData}
+            renderItem={({ item, index }) => {
+                //push your code
+            }}
         />
+    </ScrollView>
 )

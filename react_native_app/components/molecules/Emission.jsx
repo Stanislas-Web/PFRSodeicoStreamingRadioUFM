@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, View, Text} from 'react-native';
+import {Image, View, Text, ScrollView} from 'react-native';
 import styled from 'styled-components/native';
 import Title from '../atomes/TitleSection';
 
@@ -29,8 +29,20 @@ export default () => (
     <ViewEmission>
         <Title title="Emissions"/>
         {/* <br/> */}
-        <ViewImageEmissionAndText>
-            <ViewEmissionScroll>
+        {/* <ViewImageEmissionAndText> */}
+ 
+    <ScrollView horizontal={true}>
+        {/* <FlatList
+            contentContainerStyle={{alignSelf: 'flex-start'}}
+            numColumns={listData.length / 2}
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            data={listData}
+            renderItem={({ item, index }) => {
+                //push your code
+            }}
+        /> */}
+                   <ViewEmissionScroll>
             <ImageEmission
                     source={require('../../assets/affiche13.jpg')}  
             />
@@ -48,9 +60,28 @@ export default () => (
             />
                 <Text>Sport</Text>
             </ViewEmissionScroll>
+            <ViewEmissionScroll>
+            <ImageEmission
+                    source={require('../../assets/affiche16.jpg')}  
+            />
+                <Text>Sport</Text>
+            </ViewEmissionScroll>
+            <ViewEmissionScroll>
+            <ImageEmission
+                    source={require('../../assets/affiche16.jpg')}  
+            />
+                <Text>Sport</Text>
+            </ViewEmissionScroll>
+            <ViewEmissionScroll>
+            <ImageEmission
+                    source={require('../../assets/affiche16.jpg')}  
+            />
+                <Text>Sport</Text>
+            </ViewEmissionScroll>
+    </ScrollView>
           
             
-        </ViewImageEmissionAndText>
+        {/* </ViewImageEmissionAndText> */}
 
     </ViewEmission>
 )
