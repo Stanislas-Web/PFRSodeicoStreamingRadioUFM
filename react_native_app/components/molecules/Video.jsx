@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, View, Text} from 'react-native';
+import {Image, View, Text, ScrollView} from 'react-native';
 import styled from 'styled-components/native';
 import Title from '../atomes/TitleSection';
 
@@ -10,7 +10,7 @@ const TextPodcast = styled.Text`
     font-weight: bold;
 `;
 const ViewEmission = styled.View`
-    padding: 5%;
+    padding: 5% 5% 1% 5%;
 `;
 const ImageEmission = styled.Image`
     width: 100px;
@@ -29,28 +29,53 @@ export default () => (
     <ViewEmission>
         <Title title="Dernières vidéos"/>
         {/* <br/> */}
-        <ViewImageEmissionAndText>
+        {/* <ViewImageEmissionAndText> */}
+ 
+    <ScrollView horizontal={true}>
+        {/* <FlatList
+            contentContainerStyle={{alignSelf: 'flex-start'}}
+            numColumns={listData.length / 2}
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            data={listData}
+            renderItem={({ item, index }) => {
+                //push your code
+            }}
+        /> */}
+                   <ViewEmissionScroll>
+            <ImageEmission
+                    source={require('../../assets/affiche13.jpg')}  
+            />
+            </ViewEmissionScroll>
             <ViewEmissionScroll>
             <ImageEmission
-                    source={require('../../assets/img1.jpg')}  
+                    source={require('../../assets/affiche18.jpg')}  
             />
-                
+            </ViewEmissionScroll>
+            <ViewEmissionScroll>
+            <ImageEmission
+                    source={require('../../assets/affiche16.jpg')}  
+            />
+            </ViewEmissionScroll>
+            <ViewEmissionScroll>
+            <ImageEmission
+                    source={require('../../assets/affiche16.jpg')}  
+            />
+            </ViewEmissionScroll>
+            <ViewEmissionScroll>
+            <ImageEmission
+                    source={require('../../assets/affiche16.jpg')}  
+            />
             </ViewEmissionScroll>
             <ViewEmissionScroll>
             <ImageEmission
                     source={require('../../assets/img3.jpg')}  
             />
-                
             </ViewEmissionScroll>
-            <ViewEmissionScroll>
-            <ImageEmission
-                    source={require('../../assets/img4.jpg')}  
-            />
-                
-            </ViewEmissionScroll>
+    </ScrollView>
           
             
-        </ViewImageEmissionAndText>
+        {/* </ViewImageEmissionAndText> */}
 
     </ViewEmission>
 )

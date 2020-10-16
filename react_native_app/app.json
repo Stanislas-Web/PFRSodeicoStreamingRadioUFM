@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/logo.png",
     "splash": {
-      "image": "./assets/logoUFM.png",
+      "image": "./assets/splashufm.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

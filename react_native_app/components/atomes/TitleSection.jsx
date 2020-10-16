@@ -8,7 +8,7 @@ import styled from 'styled-components/native';
 
 const TextPodcast = styled.Text`
     text-align:left;
-    font-size: 17px;
+    font-size: 21px;
     font-weight: bold;
 `;
  

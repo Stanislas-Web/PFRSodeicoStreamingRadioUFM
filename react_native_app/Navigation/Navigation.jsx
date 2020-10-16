@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../pages/Home';
@@ -16,14 +16,28 @@ import styled from 'styled-components/native';
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  const DEVICE_WIDTH = Dimensions.get('window').width;
+
   return (
     <NavigationContainer>
+     
     <Tab.Navigator
         tabBarOptions={{
-          activeBackgroundColor:"yellow",
-          inactiveBackgroundColor:"yellow",
+          activeBackgroundColor:"#f2e307",
+          inactiveBackgroundColor:"#f2e307",
           activeTintColor: 'black',
           inactiveTintColor: 'black',
+          style:{
+            borderTopLeftRadius:21, 
+            borderTopRightRadius:21,
+            backgroundColor:"#f2e307",
+            position:'absolute',
+            bottom: 0,
+            padding:10,
+            width: '100%',
+            height: 54,
+            zIndex: 8 
+         }
         }}
       >
 
@@ -69,6 +83,7 @@ export default function App() {
         }} 
          />
       </Tab.Navigator>
+       <View style={{height:"10px", backgroundColor:"#f2e307"}}></View>
       
     </NavigationContainer>
   );
