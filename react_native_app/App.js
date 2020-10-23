@@ -6,9 +6,10 @@ import Navigation from './Navigation/Navigation';
 import { createStackNavigator } from '@react-navigation/stack';
 
 export default function App() {
+  console.disableYellowBox = true;
   return (
     <View style={styles.container}>
-      {/* <Home/> */}
+      {/* <View style={{height:"40px", backgroundColor:"#f2e307"}}></View> */}
       <Navigation/>
       <StatusBar style="auto" />
     </View>

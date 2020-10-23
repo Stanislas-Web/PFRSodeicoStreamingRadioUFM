@@ -11,6 +11,7 @@ import { Octicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import styled from 'styled-components/native';
+import { Feather } from '@expo/vector-icons';
 
 
 const Tab = createBottomTabNavigator();
@@ -20,7 +21,6 @@ export default function App() {
 
   return (
     <NavigationContainer>
-     
     <Tab.Navigator
         tabBarOptions={{
           activeBackgroundColor:"#f2e307",
@@ -36,7 +36,8 @@ export default function App() {
             padding:10,
             width: '100%',
             height: 54,
-            zIndex: 8 
+            zIndex: 8 ,
+            
          }
         }}
       >
@@ -45,8 +46,8 @@ export default function App() {
         name="Accueil" 
         component={Home}
         options={{
-          tabBarIcon: ({  color }) => (
-            <SimpleLineIcons name="home" size={20}  color={color} />
+          tabBarIcon: ({ focused }) => (
+            <Feather name="home" size={focused?25:18}  color={focused?"#000":"#474747"} />
             
           ),
         }} 
@@ -59,8 +60,8 @@ export default function App() {
         name="Favoris" 
         component={Favoris}
         options={{
-          tabBarIcon: ({ color }) => (
-            <MaterialIcons name="favorite-border" size={24} color={color} />
+          tabBarIcon: ({ focused }) => (
+            <MaterialIcons name="favorite-border" size={focused?25:18}  color={focused?"#000":"#474747"} />
           ),
         }} 
          />
@@ -68,8 +69,8 @@ export default function App() {
         name="Recherche" 
         component={Search}
         options={{
-          tabBarIcon: ({ color}) => (
-            <Octicons name="search" size={24} color={color} />
+          tabBarIcon: ({ focused }) => (
+            <Octicons name="search" size={focused?25:18}  color={focused?"#000":"#474747"} />
           ),
         }} 
          />
@@ -77,13 +78,13 @@ export default function App() {
         name="Profile" 
         component={Profile}
         options={{
-          tabBarIcon: ({ color }) => (
-            <FontAwesome5 name="user" size={24} color={color} />
+          tabBarIcon: ({ focused }) => (
+            <FontAwesome5 name="user" size={focused?25:18}  color={focused?"#000":"#474747"} />
           ),
         }} 
          />
       </Tab.Navigator>
-       <View style={{height:"10px", backgroundColor:"#f2e307"}}></View>
+       
       
     </NavigationContainer>
   );

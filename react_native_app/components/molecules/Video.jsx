@@ -2,6 +2,7 @@ import React from 'react';
 import {Image, View, Text, ScrollView} from 'react-native';
 import styled from 'styled-components/native';
 import Title from '../atomes/TitleSection';
+import Vid from '../atomes/VideoPlayer';
 
 
 const TextPodcast = styled.Text`
@@ -30,8 +31,10 @@ export default () => (
         <Title title="Dernières vidéos"/>
         {/* <br/> */}
         {/* <ViewImageEmissionAndText> */}
+    
  
     <ScrollView horizontal={true}>
+       {/* <Vid/> */}
         {/* <FlatList
             contentContainerStyle={{alignSelf: 'flex-start'}}
             numColumns={listData.length / 2}

@@ -15,6 +15,7 @@ export default class RemoteSound extends Component {
 //     })
 //   }
 // http://100radio-albi.ice.infomaniak.ch/100radio-albi-128.mp3
+//
 
   constructor(props)
     {
@@ -22,7 +23,7 @@ export default class RemoteSound extends Component {
 
       this.audioPlayer = new Audio.Sound();
       this.state = {
-        isLoading: false
+        isPlaying: false
       }
 
 
@@ -35,11 +36,17 @@ export default class RemoteSound extends Component {
 
     playSound = async () => {
         try {
-          this.setState({isPlaying: true});
+          
+          const status = {
+            shouldPlay: false
+          }
+    
+          // this.setState({isPlaying: true});
           await this.audioPlayer.unloadAsync()
-          // await this.audioPlayer.loadAsync(require("./audio.mp3"));
-          await this.audioPlayer.loadAsync({uri:'http://100radio-albi.ice.infomaniak.ch/100radio-albi-128.mp3'});
+          // await this.audioPlayer.loadAsync(require("./audio.mp3"),status, false);
+          await this.audioPlayer.loadAsync({uri:'https://www.radioking.com/play/testradio6'},status, false);
           await this.audioPlayer.playAsync();
+          this.setState({isPlaying: true});
           
         } catch (err) {
           console.warn("Couldn't Play audio", err)
@@ -71,11 +78,21 @@ export default class RemoteSound extends Component {
     //     )
     //   }
     // }
-  
+    _displayPlaying() {
+      if (this.state.isPlaying ===false) {
+        return (
+          <Ionicons name="md-play-circle" size={60} color="black" onPress={this.playSound} />
+        )
+      }else{
+        return(
+          <MaterialIcons name="pause-circle-filled" size={60} color="black" onPress={this.pauseSound} />
+        )
+
+      }
+    }
   render() {
-    return <View>           
-       <Ionicons name="md-play-circle" size={60} color="black" onPress={this.playSound} />
-       <MaterialIcons name="pause-circle-filled" size={50} color="black" onPress={this.pauseSound} />
+    return <View> 
+      {this._displayPlaying()}          
       </View>
   }
 }

@@ -28,12 +28,11 @@ class Body extends StatelessWidget {
                       image: AssetImage("assets/images/affiche1.jpg"),
                       // image: NetworkImage(
                       //     'https://i.pinimg.com/originals/da/c9/3c/dac93cab9ef81f78448c2361cd510be2.jpg'),
-                      fit: BoxFit.fill,
+                      // fit: BoxFit.fill,
                     ),
                     borderRadius: BorderRadius.only(
-                        // bottomLeft: Radius.circular(36),
-                        // bottomRight: Radius.circular(36)
-                        )),
+                        bottomLeft: Radius.circular(36),
+                        bottomRight: Radius.circular(36))),
                 child: Row(
                   children: [
                     // Text(
@@ -93,7 +92,7 @@ class Body extends StatelessWidget {
                         BoxShadow(
                             offset: Offset(0, 10),
                             blurRadius: 50,
-                            color: KPrimaryColor.withOpacity(0.23)),
+                            color: Colors.black.withOpacity(0.23)),
                       ]),
 
                   // child: TextField(
@@ -113,50 +112,97 @@ class Body extends StatelessWidget {
             ],
           ),
         ),
-        //plus recents
-        Container(
-          padding: EdgeInsets.only(left: KDefaultPadding, top: 10, bottom: 10),
-          child: Row(
+
+        SingleChildScrollView(
+          child: Column(
             children: [
-              Text(
-                "Plus récents",
-                style: Theme.of(context).textTheme.headline6.copyWith(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+              Container(
+                padding:
+                    EdgeInsets.only(left: KDefaultPadding, top: 10, bottom: 10),
+                child: Row(
+                  children: [
+                    Text(
+                      "Plus récents",
+                      style: Theme.of(context).textTheme.headline6.copyWith(
+                            color: Colors.black,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          padding: EdgeInsets.only(left: KDefaultPadding),
-          child: Row(
-            children: [
-              Image.asset(
-                "assets/images/affiche17.jpg",
-                height: 80,
-                width: 80,
+                  ],
+                ),
               ),
               Container(
-                padding: EdgeInsets.all(KDefaultPadding),
-                child: Column(children: [
-                  Text(
-                    "UMatinal",
-                    style: Theme.of(context).textTheme.headline6.copyWith(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                    textAlign: TextAlign.left,
-                  ),
-                  Text("Avec Carine MUTAHALI")
-                ]),
-              )
+                padding: EdgeInsets.only(left: KDefaultPadding),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/affiche17.jpg",
+                      height: 80,
+                      width: 80,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(KDefaultPadding),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "UMatinal",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline6
+                                  .copyWith(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                            ),
+                            Text("Avec Carine MUTAHALI")
+                          ]),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(left: KDefaultPadding, top: 10),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/affiche17.jpg",
+                      height: 80,
+                      width: 80,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(KDefaultPadding),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "UMatinal",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline6
+                                  .copyWith(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                            ),
+                            Text("Avec Carine MUTAHALI")
+                          ]),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
+        //plus recents
+
         //Les Emissions
+
         Container(
           padding: EdgeInsets.only(left: KDefaultPadding, top: 10, bottom: 10),
           child: Row(
@@ -165,14 +211,37 @@ class Body extends StatelessWidget {
                 "Emissions",
                 style: Theme.of(context).textTheme.headline6.copyWith(
                       color: Colors.black,
-                      fontSize: 20,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
               ),
+              // emissionSection,
             ],
           ),
-        )
+        ),
       ],
     );
   }
 }
+
+Widget emissionSection = Container(
+  padding: EdgeInsets.only(left: KDefaultPadding, top: 2),
+  child: Row(
+    children: [
+      Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              "assets/images/affiche17.jpg",
+              height: 80,
+              width: 80,
+            ),
+            Text("Musique")
+          ],
+        ),
+      ),
+      Container(),
+    ],
+  ),
+);

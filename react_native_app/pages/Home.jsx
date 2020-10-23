@@ -24,8 +24,9 @@ const ViewParent = styled.View`
 
 export default () => (
     <Container>
-        <BackgroundStyle source={require("../assets/affiche1.jpg")}/>
-        {/* <Caroussel/> */}
+        
+        {/* <BackgroundStyle source={require("../assets/affiche1.jpg")}/> */}
+        <Caroussel/>
         <ViewParent>
             <PlayerRadio/> 
         </ViewParent>
